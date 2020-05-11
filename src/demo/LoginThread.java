@@ -15,8 +15,9 @@ public final class LoginThread extends Thread {
     @Override
     public void run() {
         SessionContextHolder sessionContextHolder = SessionContextHolder.getInstance();
-        int counter = 10;
-        while (--counter != 0) {
+        int counter = 1;
+        while (counter <= 10) {
+            System.out.println("----------------COUNTER: " + counter + ", Name: " + Thread.currentThread().getName() + "----------------");
             Session session = sessionContextHolder.retrieve();
             logger.info("Login thread '" + getName() + "' is using session '" + session.getId() + "'.");
             session.setAttribute("data", "data-" + getName().toLowerCase() + "-" + new Random().nextInt() + "'.");
@@ -26,6 +27,7 @@ public final class LoginThread extends Thread {
             } catch (InterruptedException ex) {
                 logger.error("Unknown error in login thread '" + Thread.currentThread().getName() + "'.");
             }
+            counter++;
         }
     }
 }

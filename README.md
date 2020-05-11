@@ -2,6 +2,7 @@
 Demo program created for thread local article
 
 # output from console
+```
          LoginThread [INFO]  Login thread [LoginThread: seyed] has been created for 'seyed'.
 SessionContextHolder [WARN] 		 Session doesn't exist for login thread '[LoginThread: seyed]'.
              Session [INFO] 				 New session with id 'MTOTMTK2ODIXMTE4MQ==' created for login thread '[LoginThread: seyed]'.
@@ -89,3 +90,4 @@ SessionContextHolder [INFO] 		 Session 'MTA6LTE5OTQYNZC0NTM=' added for login th
 Thread [Main] exiting.
 
 Process finished with exit code 0
+```
